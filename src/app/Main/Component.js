@@ -6,6 +6,7 @@ import Grid from "@mui/material/Grid";
 import Paper from "@mui/material/Paper";
 import Animation from "../animation/circle";
 import Cardpower from "../cardpower/card";
+import CardTML from "../card_temp_humid_lux/card";
 
 export default function Component() {
   const drawerWidth = 200;
@@ -13,6 +14,7 @@ export default function Component() {
   const [mobileOpen, setMobileOpen] = React.useState(false);
   const { Animategrid } = Animation();
   const { cardgrid, cardSolar, cardLoad, cardBatt } = Cardpower();
+  const { cardTemp, cardHumid, cardLux } = CardTML();
 
   const Item = styled(Paper)(({ theme }) => ({
     backgroundColor: theme.palette.mode === "dark" ? "#fff" : "#fff",
@@ -31,12 +33,12 @@ export default function Component() {
       <AppBar
         position="fixed"
         sx={{
-          width: { sm: `calc(100% - ${drawerWidth}px)` }, 
-          ml: { sm: `${drawerWidth}px` }, 
-          background: "rgb(43,46,61)",
-          background:"linear-gradient(90deg, rgba(43,46,61,1) 0%, rgba(7,0,55,1) 50%, rgba(2,0,59,1) 100%)",
+          width: { sm: `calc(100% - ${drawerWidth}px)` },
+          ml: { sm: `${drawerWidth}px` },
+          background: "rgb(34,129,195)",
+          background:
+            "linear-gradient(0deg, rgba(34,129,195,1) 3%, rgba(2,58,165,1) 83%)",
         }}
-        
       >
         <Toolbar>
           <IconButton
@@ -60,7 +62,7 @@ export default function Component() {
           flexGrow: 1,
           p: 3,
           width: { sm: `calc(100% - ${drawerWidth}px)` },
-          backgroundColor: "#F5F5F5",
+          backgroundColor: "#343E57",
           height: "100vh",
         }}
       >
@@ -83,9 +85,15 @@ export default function Component() {
             <Grid item xs={6}>
               {cardBatt}
             </Grid>
-            <Grid item xs={4}><Item>1</Item></Grid>
-            <Grid item xs={4}><Item>1</Item></Grid>
-            <Grid item xs={4}><Item>1</Item></Grid>
+            <Grid item xs={4}>
+              {cardLux}
+            </Grid>
+            <Grid item xs={4}>
+              {cardTemp}
+            </Grid>
+            <Grid item xs={4}>
+              {cardHumid}
+            </Grid>
           </Grid>
         </Box>
       </Box>

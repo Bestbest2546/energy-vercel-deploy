@@ -1,12 +1,8 @@
 import * as React from "react";
-import { useTheme } from "@mui/material/styles";
 import Box from "@mui/material/Box";
-import Card from "@mui/material/Card";
-import CardContent from "@mui/material/CardContent";
-import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
-import Divider from "@mui/material/Divider";
-
+import Grid from "@mui/material/Grid";
+import Image from "next/image";
 export default function ControlCard() {
   const valuegrid = (
     <Typography
@@ -18,289 +14,153 @@ export default function ControlCard() {
     </Typography>
   );
 
-  const cardgrid = (
-    <Card
+  const cardTemp = (
+    <Grid
+      container
+      alignItems="center"
+      justifyContent="center"
       sx={{
-        display: "flex",
-        flexDirection: "row",
-        width: "100%",
+        backgroundColor: "#F9AE00",
+        borderRadius: "10px",
+        height: "150px",
+        padding: "10px",
+        background: "rgb(58,131,238)",
+        background:
+          "linear-gradient(90deg, rgba(58,131,238,1) 0%, rgba(0,117,255,1) 63%, rgba(0,224,191,1) 100%)",
       }}
     >
-      <Box sx={{ display: "flex" }}>
-        <CardContent
-          sx={{
-            alignItems: "start",
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "space-around",
-          }}
+      <Grid item xs={12}>
+        <Typography
+          component="div"
+          variant="h6"
+          sx={{ fontWeight: "bold", color: "white" }}
         >
-          <Typography
-            component="div"
-            variant="h5"
-            sx={{ marginBottom: "40px", fontWeight: "bold", color: "#29ABE2" }}
-          >
-            Grid
-          </Typography>
-          <Typography component="div" variant="h8" color="text.secondary">
-            power now
-          </Typography>
-          <Typography
-            component="div"
-            variant="h6"
-            sx={{
-              display: "flex",
-              flexDirection: "row",
-              alignItems: "center",
-              marginBottom: "10px",
-              fontWeight: "bold",
-              color: "#696969",
-            }}
-          >
-            {valuegrid} Watt
-          </Typography>
-          <Divider flexItem />
-        </CardContent>
-      </Box>
-      <Box
-        sx={{
-          display: "flex",
-          width: "fit-content",
-          justifyContent: "center",
-          alignItems: "center",
-        }}
-      >
-        <CardMedia
-          component="img"
-          sx={{
-            width: 150,
-            filter: "drop-shadow(1.7px 2px 1px grey)", 
-          }}
-          image="/png/power-line (2).png"   
-          alt=""
-        />
-      </Box>
-      <Box sx={{ display: "flex" }}>
-        <Box
-          sx={{
-            display: "flex",
-            width: 350,
-            flexDirection: "column",
-            justifyContent: "space-evenly",
-            alignItems: "start",
-            backgroundColor: "#29ABE2",
-            padding: "10px",
-          }}
+          Temperature
+        </Typography>
+      </Grid>
+      <Grid item xs={4}>
+        <Image src="/temp.svg" alt="" height={50} width={50} />
+      </Grid>
+      <Grid item xs={4}>
+        <Typography
+          component="div"
+          variant="h3"
+          sx={{ fontWeight: "bold", color: "white" }}
         >
-          <Typography component="div" variant="h8" sx={{ color: "white" }}>
-            Week
-          </Typography>
-          <Typography component="div" variant="h5" sx={{ color: "white" }}>
-            Power use
-          </Typography>
-          <Divider flexItem sx={{ color: "white" }} />
-          <Typography component="div" variant="h8" sx={{ color: "white" }}>
-            Month
-          </Typography>
-          <Typography component="div" variant="h5" sx={{ color: "white" }}>
-            Power use
-          </Typography>
-        </Box>
-      </Box>
-    </Card>
+          25
+        </Typography>
+      </Grid>
+      <Grid item xs={4}>
+        <Typography
+          component="div"
+          variant="h4"
+          sx={{ fontWeight: "bold", color: "white" }}
+        >
+          °C
+        </Typography>
+      </Grid>
+    </Grid>
   );
 
-  const cardSolar = (
-    <Card
+  const cardHumid = (
+    <Grid
+      container
+      alignItems="center"
+      justifyContent="center"
       sx={{
-        display: "flex",
-        flexDirection: "row",
-        width: "100%",
-        // justifyContent: "space-between",
+        backgroundColor: "#F9AE00",
+        borderRadius: "10px",
+        height: "150px",
+        padding: "10px",
+        background: "rgb(82,58,238)",
+        background:
+          "linear-gradient(90deg, rgba(82,58,238,1) 25%, rgba(0,69,255,1) 100%, rgba(0,91,224,1) 100%)",
       }}
     >
-      <Box sx={{ display: "flex" }}>
-        <CardContent
-          sx={{
-            alignItems: "start",
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "space-around",
-          }}
+      <Grid item xs={12}>
+        <Typography
+          component="div"
+          variant="h6"
+          sx={{ fontWeight: "bold", color: "white" }}
         >
-          <Typography
-            component="div"
-            variant="h5"
-            sx={{ marginBottom: "40px", fontWeight: "bold", color: "#F9AE00" }}
-          >
-            Solar
-          </Typography>
-          <Typography component="div" variant="h8" color="text.secondary">
-            power now
-          </Typography>
-          <Typography
-            component="div"
-            variant="h6"
-            sx={{
-              display: "flex",
-              flexDirection: "row",
-              alignItems: "center",
-              marginBottom: "10px",
-              fontWeight: "bold",
-              color: "#696969",
-            }}
-          >
-            {valuegrid} Watt
-          </Typography>
-          <Divider flexItem />
-        </CardContent>
-      </Box>
-      <Box
-        sx={{
-          display: "flex",
-          width: "fit-content",
-          justifyContent: "center",
-          alignItems: "center",
-        }}
-      >
-        <CardMedia
-          component="img"
-          sx={{
-            width: 150,
-            filter: "drop-shadow(1.7px 2px 1px grey)", 
-          }}
-          image="/png/sun.png"
-          alt=""
-        />
-      </Box>
-      <Box sx={{ display: "flex" }}>
-        <Box
-          sx={{
-            display: "flex",
-            width: 350,
-            flexDirection: "column",
-            justifyContent: "space-evenly",
-            alignItems: "start",
-            backgroundColor: "#F9AE00",
-            padding: "10px",
-          }}
+         Humidity
+        </Typography>
+      </Grid>
+      <Grid item xs={4}>
+        <Image src="/humid.svg" alt="" height={50} width={50} />
+      </Grid>
+      <Grid item xs={4}>
+        <Typography
+          component="div"
+          variant="h3"
+          sx={{ fontWeight: "bold", color: "white" }}
         >
-          <Typography component="div" variant="h8" sx={{ color: "white" }}>
-            Week
-          </Typography>
-          <Typography component="div" variant="h5" sx={{ color: "white" }}>
-            Power use
-          </Typography>
-          <Divider flexItem sx={{ color: "white" }} />
-          <Typography component="div" variant="h8" sx={{ color: "white" }}>
-            Month
-          </Typography>
-          <Typography component="div" variant="h5" sx={{ color: "white" }}>
-            Power use
-          </Typography>
-        </Box>
-      </Box>
-    </Card>
+          69.35
+        </Typography>
+      </Grid>
+      <Grid item xs={4}>
+        <Typography
+          component="div"
+          variant="h4"
+          sx={{ fontWeight: "bold", color: "white" }}
+        >
+          %RH
+        </Typography>
+      </Grid>
+    </Grid>
   );
 
-  const cardLoad = (
-    <Card
+  const cardLux = (
+    <Grid
+      container
+      alignItems="center"
+      justifyContent="center"
       sx={{
-        display: "flex",
-        flexDirection: "row",
-        width: "100%",
-        // justifyContent: "space-between",
+        backgroundColor: "#F9AE00",
+        borderRadius: "10px",
+        height: "150px",
+        padding: "10px",
+        background: " rgb(238,90,58)",
+        background:
+          "linear-gradient(90deg, rgba(238,90,58,1) 0%, rgba(255,0,82,1) 30%, rgba(224,0,91,1) 100%)",
       }}
     >
-      <Box sx={{ display: "flex" }}>
-        <CardContent
-          sx={{
-            alignItems: "start",
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "space-around",
-          }}
+      <Grid item xs={12}>
+        <Typography
+          component="div"
+          variant="h6"
+          sx={{ fontWeight: "bold", color: "white" }}
         >
-          <Typography
-            component="div"
-            variant="h5"
-            sx={{ marginBottom: "40px", fontWeight: "bold", color: "#03B18E" }}
-          >
-            Load
-          </Typography>
-          <Typography component="div" variant="h8" color="text.secondary">
-            power now
-          </Typography>
-          <Typography
-            component="div"
-            variant="h6"
-            sx={{
-              display: "flex",
-              flexDirection: "row",
-              alignItems: "center",
-              marginBottom: "10px",
-              fontWeight: "bold",
-              color: "#696969",
-            }}
-          >
-            {valuegrid} Watt
-          </Typography>
-          <Divider flexItem />
-        </CardContent>
-      </Box>
-      <Box
-        sx={{
-          display: "flex",
-          width: "fit-content",
-          justifyContent: "center",
-          alignItems: "center",
-        }}
-      >
-        <CardMedia
-          component="img"
-          sx={{
-            width: 150,
-            filter: "drop-shadow(1.7px 2px 1px grey)", 
-          }}
-          image="/png/green-house.png"
-          alt=""
-        />
-      </Box>
-      <Box sx={{ display: "flex" }}>
-        <Box
-          sx={{
-            display: "flex",
-            width: 350,
-            flexDirection: "column",
-            justifyContent: "space-evenly",
-            alignItems: "start",
-            backgroundColor: "#03B18E",
-            padding: "10px",
-          }}
+          Light intensity
+        </Typography>
+      </Grid>
+      <Grid item xs={4}>
+        <Image src="/png/sun (1).png" alt="" height={50} width={50} />
+      </Grid>
+      <Grid item xs={4}>
+        <Typography
+          component="div"
+          variant="h3"
+          sx={{ fontWeight: "bold", color: "white" }}
         >
-          <Typography component="div" variant="h8" sx={{ color: "white" }}>
-            Week
-          </Typography>
-          <Typography component="div" variant="h5" sx={{ color: "white" }}>
-            Power use
-          </Typography>
-          <Divider flexItem sx={{ color: "white" }} />
-          <Typography component="div" variant="h8" sx={{ color: "white" }}>
-            Month
-          </Typography>
-          <Typography component="div" variant="h5" sx={{ color: "white" }}>
-            Power use
-          </Typography>
-        </Box>
-      </Box>
-    </Card>
+          4000
+        </Typography>
+      </Grid>
+      <Grid item xs={4}>
+        <Typography
+          component="div"
+          variant="h4"
+          sx={{ fontWeight: "bold", color: "white" }}
+        >
+          Lux
+        </Typography>
+      </Grid>
+    </Grid>
   );
-
- 
 
   return {
-    cardgrid,
-    cardSolar,
-    cardLoad,
+    cardTemp,
+    cardHumid,
+    cardLux,
   };
 }
