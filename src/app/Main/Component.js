@@ -53,7 +53,7 @@ export default function Component() {
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" noWrap component="div">
-            DASHBOARD(DEMO)
+            DASHBOARD
           </Typography>
         </Toolbar>
       </AppBar>
@@ -144,7 +144,7 @@ export default function Component() {
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" noWrap component="div">
-            INSTALLING(DEMO)
+            INSTALLING
           </Typography>
         </Toolbar>
       </AppBar>
