@@ -7,7 +7,7 @@ import LineAxisIcon from "@mui/icons-material/LineAxis";
 import List from "@mui/material/List";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemText from "@mui/material/ListItemText";
-import MailIcon from "@mui/icons-material/Mail";
+import SelectAllIcon from '@mui/icons-material/SelectAll';
 import Image from "next/image";
 import Showdash from "@/app/Main/Component"
 
@@ -44,7 +44,7 @@ function Home() {
           <ListItemText primary="Dashboard" sx={{ color: "white" }} />
         </ListItemButton>
         <ListItemButton onClick={() => setCurrentPage("installing")}>
-          <MailIcon sx={{ marginRight: "10px", color: "white" }} />
+          <SelectAllIcon sx={{ marginRight: "10px", color: "white" }} />
           <ListItemText primary="Installing" sx={{ color: "white" }} />
         </ListItemButton>
       </List>

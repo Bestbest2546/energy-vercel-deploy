@@ -7,6 +7,9 @@ import Paper from "@mui/material/Paper";
 import Animation from "../animation/circle";
 import Cardpower from "../cardpower/card";
 import CardTML from "../card_temp_humid_lux/card";
+import Piechart from "../piechart/piechart";
+import Linechart from "../Linechart/power";
+import Install from "../install/plan";
 
 export default function Component() {
   const drawerWidth = 200;
@@ -31,7 +34,6 @@ export default function Component() {
   const dashboard = (
     <>
       <AppBar
-        position="fixed"
         sx={{
           width: { sm: `calc(100% - ${drawerWidth}px)` },
           ml: { sm: `${drawerWidth}px` },
@@ -43,7 +45,7 @@ export default function Component() {
         <Toolbar>
           <IconButton
             color="inherit"
-            aria-label="open drawer"
+            aria-label="open"
             edge="start"
             onClick={handleDrawerToggle}
             sx={{ mr: 2, display: { sm: "none" } }}
@@ -57,45 +59,65 @@ export default function Component() {
       </AppBar>
 
       <Box
-        component="main"
         sx={{
-          flexGrow: 1,
-          p: 3,
-          width: { sm: `calc(100% - ${drawerWidth}px)` },
+          height: "100%",
           backgroundColor: "#343E57",
-          height: "100vh",
+          padding: "20px",
+          paddingTop: "90px",
         }}
       >
-        <Toolbar />
-        <Box sx={{ width: "100%" }}>
-          <Grid
-            container
-            rowSpacing={1}
-            columnSpacing={{ xs: 1, sm: 1, md: 1 }}
-          >
-            <Grid item xs={6}>
-              {cardgrid}
-            </Grid>
-            <Grid item xs={6}>
-              {cardSolar}
-            </Grid>
-            <Grid item xs={6}>
-              {cardLoad}
-            </Grid>
-            <Grid item xs={6}>
-              {cardBatt}
-            </Grid>
-            <Grid item xs={4}>
-              {cardLux}
-            </Grid>
-            <Grid item xs={4}>
-              {cardTemp}
-            </Grid>
-            <Grid item xs={4}>
-              {cardHumid}
-            </Grid>
+        <Grid
+          container
+          rowSpacing={{ xs: 2, sm: 2, md: 3 }}
+          columnSpacing={{ xs: 2, sm: 2, md: 3 }}
+        >
+          <Grid item xs={6} sm={6} md={6}>
+            {cardgrid}
           </Grid>
-        </Box>
+          <Grid item xs={6} sm={6} md={6}>
+            {cardSolar}
+          </Grid>
+          <Grid item xs={6} sm={6} md={6}>
+            {cardLoad}
+          </Grid>
+          <Grid item xs={6} sm={6} md={6}>
+            {cardBatt}
+          </Grid>
+          <Grid item xs={4}>
+            {cardLux}
+          </Grid>
+          <Grid item xs={4}>
+            {cardTemp}
+          </Grid>
+          <Grid item xs={4}>
+            {cardHumid}
+          </Grid>
+
+          <Grid item xs={6}>
+            <Linechart />
+          </Grid>
+          {/* <Grid item xs={2}>
+            <Piechart />
+          </Grid>
+          <Grid item xs={10}>
+            {cardSolar}
+          </Grid>
+          <Grid item xs={6}>
+            {cardLoad}
+          </Grid>
+          <Grid item xs={6}>
+            {cardBatt}
+          </Grid>
+          <Grid item xs={4}>
+            {cardLux}
+          </Grid>
+          <Grid item xs={4}>
+            {cardTemp}
+          </Grid>
+          <Grid item xs={4}>
+            {cardHumid}
+          </Grid> */}
+        </Grid>
       </Box>
     </>
   );
@@ -103,17 +125,18 @@ export default function Component() {
   const installing = (
     <>
       <AppBar
-        position="fixed"
         sx={{
           width: { sm: `calc(100% - ${drawerWidth}px)` },
           ml: { sm: `${drawerWidth}px` },
-          backgroundColor: "#2B2E3D",
+          background: "rgb(34,129,195)",
+          background:
+            "linear-gradient(0deg, rgba(34,129,195,1) 3%, rgba(2,58,165,1) 83%)",
         }}
       >
         <Toolbar>
           <IconButton
             color="inherit"
-            aria-label="open drawer"
+            aria-label="open"
             edge="start"
             onClick={handleDrawerToggle}
             sx={{ mr: 2, display: { sm: "none" } }}
@@ -127,17 +150,23 @@ export default function Component() {
       </AppBar>
 
       <Box
-        component="main"
         sx={{
-          flexGrow: 1,
-          p: 3,
-          width: { sm: `calc(100% - ${drawerWidth}px)` },
-          backgroundColor: "#343E57",
           height: "100vh",
+          width: "100%",
+          backgroundColor: "#343E57",
+          padding: "20px",
+          paddingTop: "90px",
         }}
       >
-        <Toolbar />
-        {/* //component */}
+        <Grid
+          container
+          rowSpacing={{ xs: 2, sm: 2, md: 3 }}
+          columnSpacing={{ xs: 2, sm: 2, md: 3 }}
+        >
+          <Grid item xs={12} sm={12} md={12}>
+            <Install />
+          </Grid>
+        </Grid>
       </Box>
     </>
   );

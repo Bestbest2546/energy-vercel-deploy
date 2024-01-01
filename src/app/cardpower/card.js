@@ -14,7 +14,17 @@ export default function ControlCard() {
       variant="h3"
       sx={{ marginBottom: "10px", fontWeight: "bold", color: "#696969" }}
     >
-      Value
+      4000
+    </Typography>
+  );
+
+  const valuebatt = (
+    <Typography
+      component="div"
+      variant="h3"
+      sx={{ marginBottom: "10px", fontWeight: "bold", color: "#696969" }}
+    >
+      80
     </Typography>
   );
 
@@ -23,8 +33,8 @@ export default function ControlCard() {
       sx={{
         display: "flex",
         flexDirection: "row",
+        justifyContent: "space-between",
         width: "100%",
-        // justifyContent: "space-between",
       }}
     >
       <Box sx={{ display: "flex" }}>
@@ -85,7 +95,7 @@ export default function ControlCard() {
         <Box
           sx={{
             display: "flex",
-            width: 350,
+            width: "300px",
             flexDirection: "column",
             justifyContent: "space-evenly",
             alignItems: "start",
@@ -97,14 +107,14 @@ export default function ControlCard() {
             Week
           </Typography>
           <Typography component="div" variant="h5" sx={{ color: "white" }}>
-            Power use
+            14kW
           </Typography>
           <Divider flexItem sx={{ color: "white" }} />
           <Typography component="div" variant="h8" sx={{ color: "white" }}>
             Month
           </Typography>
           <Typography component="div" variant="h5" sx={{ color: "white" }}>
-            Power use
+            14kW
           </Typography>
         </Box>
       </Box>
@@ -116,6 +126,7 @@ export default function ControlCard() {
       sx={{
         display: "flex",
         flexDirection: "row",
+        justifyContent: "space-between",
         width: "100%",
         // justifyContent: "space-between",
       }}
@@ -178,7 +189,7 @@ export default function ControlCard() {
         <Box
           sx={{
             display: "flex",
-            width: 350,
+            width: "300px",
             flexDirection: "column",
             justifyContent: "space-evenly",
             alignItems: "start",
@@ -190,14 +201,14 @@ export default function ControlCard() {
             Week
           </Typography>
           <Typography component="div" variant="h5" sx={{ color: "white" }}>
-            Power use
+            14kW
           </Typography>
           <Divider flexItem sx={{ color: "white" }} />
           <Typography component="div" variant="h8" sx={{ color: "white" }}>
             Month
           </Typography>
           <Typography component="div" variant="h5" sx={{ color: "white" }}>
-            Power use
+            14kW
           </Typography>
         </Box>
       </Box>
@@ -209,6 +220,7 @@ export default function ControlCard() {
       sx={{
         display: "flex",
         flexDirection: "row",
+        justifyContent: "space-between",
         width: "100%",
         // justifyContent: "space-between",
       }}
@@ -271,7 +283,7 @@ export default function ControlCard() {
         <Box
           sx={{
             display: "flex",
-            width: 350,
+            width: "300px",
             flexDirection: "column",
             justifyContent: "space-evenly",
             alignItems: "start",
@@ -283,14 +295,14 @@ export default function ControlCard() {
             Week
           </Typography>
           <Typography component="div" variant="h5" sx={{ color: "white" }}>
-            Power use
+            14kW
           </Typography>
           <Divider flexItem sx={{ color: "white" }} />
           <Typography component="div" variant="h8" sx={{ color: "white" }}>
             Month
           </Typography>
           <Typography component="div" variant="h5" sx={{ color: "white" }}>
-            Power use
+            14kW
           </Typography>
         </Box>
       </Box>
@@ -302,6 +314,7 @@ export default function ControlCard() {
       sx={{
         display: "flex",
         flexDirection: "row",
+        justifyContent: "space-between",
         width: "100%",
         // justifyContent: "space-between",
       }}
@@ -323,7 +336,7 @@ export default function ControlCard() {
             Batt
           </Typography>
           <Typography component="div" variant="h8" color="text.secondary">
-            power now
+            % now
           </Typography>
           <Typography
             component="div"
@@ -337,7 +350,7 @@ export default function ControlCard() {
               color: "#696969",
             }}
           >
-            {valuegrid} Watt
+            {valuebatt} %
           </Typography>
           <Divider flexItem />
         </CardContent>
@@ -364,7 +377,7 @@ export default function ControlCard() {
         <Box
           sx={{
             display: "flex",
-            width: 350,
+            width: "300px",
             flexDirection: "column",
             justifyContent: "space-evenly",
             alignItems: "start",
@@ -373,18 +386,18 @@ export default function ControlCard() {
           }}
         >
           <Typography component="div" variant="h8" sx={{ color: "white" }}>
-            Week
+            Time Battery full
           </Typography>
           <Typography component="div" variant="h5" sx={{ color: "white" }}>
-            Power use
+            2023-20-20 14:00
           </Typography>
-          <Divider flexItem sx={{ color: "white" }} />
+          {/* <Divider flexItem sx={{ color: "white" }} />
           <Typography component="div" variant="h8" sx={{ color: "white" }}>
             Month
           </Typography>
           <Typography component="div" variant="h5" sx={{ color: "white" }}>
-            Power use
-          </Typography>
+            14kW
+          </Typography> */}
         </Box>
       </Box>
     </Card>
